@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Coolkicks</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style_contacto.css">
+    <link rel="icon" type="image/jpg" href="assets/img/logo.jpg">
+    <link rel="stylesheet" href="assets/css/fontello.css">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/estilosmapa.css">
+    <link rel="icon" type="image/jpg" href="assets/img/logo.jpg">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuuZGdpWH1w0fICAtfyT74pOFrTShJqF0&callback=initMap&libraries=&v=weekly" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="contenedor">
+            <h1>Coolkicks</h1>
+
+            <input type="checkbox" id="menu-bar">
+            <label class="icon-menu" for="menu-bar"></label>
+            <nav class="menu">
+                <a href="index.html">Inicio de Sesión/Registro</a>
+                <a href="principal.php">Principal</a>
+                <a href="hombres.php">Hombres</a>
+                <a href="mujeres.php">Mujeres</a>
+                <a href="contacto.html">Contactanos</a>
+                <a href="VerCarta.php"><img src="assets/img/carrito.png"></a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container contact-form">
+        <div class="contact-image">
+            <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+        </div>
+        <form id="formulario_contacto" method="POST">
+            <h3>Envíenos un mensaje</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Número de teléfono *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <button id="btnComentarios" class="btn btn-primary">Enviar Comentario</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Escribe tu mensaje *" style="width: 100%; height: 150px;"></textarea>
+                    </div>
+                </div>
+                <h2>Ubicación</h2>
+                <div id="map"></div>
+                <p class="mt-3 mb-3 text-muted foot">&copy; 2020 | Coolkicks</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var map;
+
+        function initMap() {
+            var utsjr = {
+                lat: 20.3915,
+                lng: -99.9814
+            };
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: utsjr,
+                zoom: 18
+            });
+
+            var marker = new google.maps.Marker({
+                position: utsjr,
+                map: map,
+                title: 'COOLKICKS',
+                icon: 'assets/img/marcador.png'
+            });
+
+            google.maps.event.addListener(marker, 'dbclick', function() {
+                infoWindow.open(map, marker);
+            });
+        }
+    </script>
+    </head>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="assets/js/contacto.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+#map {
+    height: 530px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#map iframe {
+    text-align: center;
+    width: 100%;
+}
+
+h1,
+h2,
+p {
+    text-align: center;
+    color: rgb(124, 112, 112);
+    font-family: "Arial";
+}
+
+html,
+body {
+    text-align: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#floating-panel {
+    text-align: center;
+    border-radius: 10px;
+}
+
+input[type=button] {
+    color: white;
+    background-color: #45DBA6;
+    border: 10px rgb(37, 36, 36);
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+input[type=textbox] {
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+.formulario {
+    text-align: center;
+    font-family: "Arial";
+}
